@@ -1,0 +1,14 @@
+development:
+  host: 'redis'
+  port: '6379'
+  db: <%= ENV['REDIS_DB'] || 4 %>
+
+test:
+  host: 'redis'
+  port: '6379'
+  db: <%= ENV['TEST_ENV_NUMBER'] || 5 %>
+
+production:
+  host: <%= ENV['REDIS_SIDEKIQ'] || 'redis-test.jdb96a.ng.0001.euw1.cache.amazonaws.com' %>
+  port: '6379'
+  db: 0
